@@ -1,0 +1,14 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8083/realms/myrealm/protocol/openid-connect/certs
+
+server:
+  port: 8082
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus

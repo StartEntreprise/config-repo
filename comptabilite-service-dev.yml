@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/app
+    username: app
+    password: app
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: false
+        show_sql: false
+
+spring.flyway.enabled: true
+
+server:
+  port: 8083
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
