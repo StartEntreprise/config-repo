@@ -1,0 +1,31 @@
+spring:
+  cloud:
+    gateway:
+      default-filters:
+        - SaveSession
+      routes:
+        - id: user
+          uri: http://localhost:8081
+          predicates:
+            - Path=/api/users/**
+          filters:
+            - StripPrefix=1
+        - id: comptabilite
+          uri: http://localhost:8083
+          predicates:
+            - Path=/api/compta/**
+          filters:
+            - StripPrefix=1
+        - id: demo-service
+          uri: http://localhost:8085
+          predicates:
+            - Path=/api/demo/** 
+          filters:
+            - StripPrefix=1
+      # CORS itbadlo mn be3d 
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
