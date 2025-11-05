@@ -20,6 +20,10 @@ spring:
           uri: http://demo-service:8085
           predicates:
             - Path=/api/demo/**
+        - id: entreprise-service
+          uri: http://entreprise-service-dev.startentreprise-dev.svc.cluster.local
+          predicates:
+            - Path=/api/enterprises/**
       # CORS itbadlo mn be3d 
       globalcors:
         corsConfigurations:

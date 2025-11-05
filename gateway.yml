@@ -12,6 +12,10 @@ spring:
           uri: http://demo-service:8085
           predicates:
             - Path=/api/demo/**
+        - id: entreprise-service
+          uri: http://entreprise-service:8080
+          predicates:
+            - Path=/api/entreprises/**
         - id: auth-service
           uri: http://auth-service:8080
           predicates:
