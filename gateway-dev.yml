@@ -11,11 +11,11 @@ spring:
           filters:
             - StripPrefix=1
         - id: comptabilite
-          uri: http://comptabilite-service:8083
+          uri: http://comptabilite-service:8085
           predicates:
-            - Path=/api/compta/**
+            - Path=/api/comptabilite/**
           filters:
-            - StripPrefix=1
+            - StripPrefix=2
         - id: demo-service
           uri: http://demo-service:8085
           predicates:
